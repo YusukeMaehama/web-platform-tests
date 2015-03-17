@@ -50,7 +50,9 @@ subdomains = [u"www",
               u"élève"]
 
 def default_routes():
-    return [("GET", "/tools/runner/*", handlers.file_handler),
+    return [("GET", "/static/*", handlers.file_handler),
+            ("POST", "/tools/runner/accept.py", handlers.python_script_handler),
+            ("GET", "/tools/runner/*", handlers.file_handler),
             ("POST", "/tools/runner/update_manifest.py", handlers.python_script_handler),
             ("*", "/_certs/*", handlers.ErrorHandler(404)),
             ("*", "/tools/*", handlers.ErrorHandler(404)),

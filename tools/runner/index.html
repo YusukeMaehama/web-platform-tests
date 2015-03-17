@@ -5,6 +5,8 @@
 <link rel='stylesheet' href='css/bootstrap.min.css'>
 <link rel='stylesheet' href='css/bootstrap-theme.min.css'>
 <link rel=stylesheet href=runner.css>
+<script src=Blob.js></script>
+<script src=bind.js></script>
 <script src=runner.js></script>
 
 
@@ -13,7 +15,7 @@
     <div class="navbar-header">
       <a class="navbar-brand" href="#">
         <img src='logo.svg' width='50' height='50' alt='Logo for the WPT Runner'>
-        Web Platform Tests Runner
+        Web Platform Tests Runner for TV (hack)
       </a>
     </div>
   </div>
@@ -45,7 +47,9 @@
         <div class="form-group">
           <label for="path" class="col-sm-3 control-label">Run tests under path</label>
           <div class="col-sm-9">
-            <input value="/" id='path' class='path form-control' disabled>
+	    <select id="path"  class='path form-control' disabled>
+	      <option value="/">/</option>
+	    </select>
           </div>
         </div>
 
@@ -174,5 +178,5 @@
       </table>
     </div>
   </div>
-
+  <iframe id="window_replacement_frame" seamless width="100%" scrolling="yes"></iframe>
 </div>
