@@ -2,10 +2,8 @@ The Web Platform Tests Project [![IRC chat](https://goo.gl/6nCIks)](http://irc.w
 ==============================
 
 The Web Platform Tests Project is a W3C-coordinated attempt to build a
-cross-browser testsuite for the Web-platform stack.  However, for mainly
-historic reasons, the CSS WG testsuite is in a separate repository,
-[csswg-test](https://github.com/w3c/csswg-test). Writing tests in a way
-that allows them to be run in all browsers gives browser projects
+cross-browser testsuite for the Web-platform stack. Writing tests in a
+way that allows them to be run in all browsers gives browser projects
 confidence that they are shipping software that is compatible with other
 implementations, and that later implementations will be compatible with
 their implementations. This in turn gives Web authors/developers
@@ -25,14 +23,15 @@ need a copy of OpenSSL. Users on Windows should read the
 To get the tests running, you need to set up the test domains in your
 [`hosts` file](http://en.wikipedia.org/wiki/Hosts_%28file%29%23Location_in_the_file_system). The
 following entries are required:
+e.g. When running Web Platform Tests pc's ip address is 192.168.1.100
 
 ```
-127.0.0.1	web-platform.test
-127.0.0.1	www.web-platform.test
-127.0.0.1	www1.web-platform.test
-127.0.0.1	www2.web-platform.test
-127.0.0.1	xn--n8j6ds53lwwkrqhv28a.web-platform.test
-127.0.0.1	xn--lve-6lad.web-platform.test
+192.168.1.100	web-platform.test
+192.168.1.100	www.web-platform.test
+192.168.1.100	www1.web-platform.test
+192.168.1.100	www2.web-platform.test
+192.168.1.100	xn--n8j6ds53lwwkrqhv28a.web-platform.test
+192.168.1.100	xn--lve-6lad.web-platform.test
 ```
 
 Because web-platform-tests uses git submodules, you must ensure that
@@ -41,6 +40,18 @@ these are up to date. In the root of your checkout, run:
 ```
 git submodule update --init --recursive
 ```
+
+For Hybridcast TV, The test environment need to run dns server.
+Because Hybridcast TV doesn't have [`hosts` file](http://en.wikipedia.org/wiki/Hosts_%28file%29%23Location_in_the_file_system).
+run with root privileges:
+
+```
+python ./tools/dns/dns.py 192.168.1.100
+```
+
+This dns server resolve test domains used by Web Platform Tests.
+Change DNS servers settings to running Web Platform Tests pc's ip address on Hybridcast TV.
+
 
 The test environment can then be started using
 

@@ -4,4 +4,4 @@
 	ignore = dirty
 [submodule "tools"]
 	path = tools
-	url = https://github.com/w3c/wpt-tools.git
+	url = https://github.com/wpt-on-tv-tf/wpt-tools.git
